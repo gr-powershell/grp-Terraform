@@ -2,6 +2,11 @@
 #   1. Create an S3 bucket.
 #   2. Create an EC2 instance.
 
+# !IMPORTANT! -- Need to edit the .git/info/exclusions file with the
+# following directory:
+#   .terraform
+# The directory is too large for [git push] to work!
+
 # 1. Will need to configure an AWS User (IAM) with Programmatic access first!
 # 2. AWS CLI should be installed next with credentials set up for the User
 # created in (1.).
