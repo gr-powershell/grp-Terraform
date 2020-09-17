@@ -71,7 +71,13 @@ resource "aws_instance" "grp-ec2" {
 }
 */
 
+# Call the output from the child module:
+output "s3_fordes" {
+  value = "${module.AWS.s3_fordes}"
+}
+
 # Call the child [AWS] module:
 module "AWS" {
   source = "./tfModules"
+
 }

@@ -19,3 +19,8 @@ resource "aws_instance" "grp-ec2" {
   ami           = "ami-0eb7fbcc77e5e6ec6"
   instance_type = var.ec2_instance_type
 }
+
+# Example of using output to be used within the root module:
+output "s3_fordes" {
+  value = aws_s3_bucket.b.force_destroy
+}
