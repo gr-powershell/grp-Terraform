@@ -71,6 +71,15 @@ resource "aws_instance" "grp-ec2" {
 }
 */
 
+# Setup the .tfstate file within AWS S3:
+terraform {
+  backend "s3" {
+    bucket = "grp-tf-tutorial"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 # Call the output from the child module:
 output "s3_fordes" {
   value = "${module.AWS.s3_fordes}"
@@ -79,5 +88,4 @@ output "s3_fordes" {
 # Call the child [AWS] module:
 module "AWS" {
   source = "./tfModules"
-
 }
